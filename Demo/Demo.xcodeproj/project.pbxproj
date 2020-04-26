@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0152A1F82455648900795D00 /* LinearRegressionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0152A1F72455648900795D00 /* LinearRegressionModel.swift */; };
+		0152A1FA24562CA100795D00 /* PolynomialRegressionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0152A1F924562CA100795D00 /* PolynomialRegressionModel.swift */; };
 		01EC385F2452C42F007BAB07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EC385E2452C42F007BAB07 /* AppDelegate.swift */; };
 		01EC38612452C42F007BAB07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EC38602452C42F007BAB07 /* ViewController.swift */; };
 		01EC38632452C430007BAB07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01EC38622452C430007BAB07 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		0152A1F72455648900795D00 /* LinearRegressionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearRegressionModel.swift; sourceTree = "<group>"; };
+		0152A1F924562CA100795D00 /* PolynomialRegressionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolynomialRegressionModel.swift; sourceTree = "<group>"; };
 		01EC385B2452C42F007BAB07 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01EC385E2452C42F007BAB07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01EC38602452C42F007BAB07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			children = (
 				01EC385E2452C42F007BAB07 /* AppDelegate.swift */,
 				01EC38602452C42F007BAB07 /* ViewController.swift */,
+				0152A1F924562CA100795D00 /* PolynomialRegressionModel.swift */,
 				0152A1F72455648900795D00 /* LinearRegressionModel.swift */,
 				01EC38622452C430007BAB07 /* Assets.xcassets */,
 				01EC38642452C430007BAB07 /* Main.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0152A1FA24562CA100795D00 /* PolynomialRegressionModel.swift in Sources */,
 				0152A1F82455648900795D00 /* LinearRegressionModel.swift in Sources */,
 				01EC38612452C42F007BAB07 /* ViewController.swift in Sources */,
 				01EC385F2452C42F007BAB07 /* AppDelegate.swift in Sources */,

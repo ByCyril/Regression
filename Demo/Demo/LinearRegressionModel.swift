@@ -16,7 +16,8 @@ struct LinearRegression: Layer {
     
     @differentiable
     func callAsFunction(_ input: Tensor<Float>) -> Tensor<Float> {
-        return (input * m) + b
+//        y = mx + b
+        return (m * input) + b
     }
     
     mutating func clear() {

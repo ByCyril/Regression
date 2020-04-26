@@ -11,13 +11,20 @@ import TensorFlow
 
 class ViewController: NSViewController {
     
-    let epochCount = 500
+    @IBOutlet var epochField: NSTextField!
+    @IBOutlet var learningRateField: NSTextField!
+    
+    var epochCount = 1000
+    var learningRate: Float = 0.5
     
     var xVals: [Float] = []
     var yVals: [Float] = []
     
     var dots = [NSView]()
-    var model = LinearRegression()
+    var lineDots = [NSView]()
+    
+//    var model = LinearRegression()
+    var model = PolynomialRegression()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +47,21 @@ class ViewController: NSViewController {
     }
     
     @IBAction func train(_ sender: Any) {
+        epochCount = (epochField.stringValue.isEmpty) ? 500 : Int(epochField.stringValue)!
+        learningRate = (learningRateField.stringValue.isEmpty) ? 0.1 : Float(learningRateField.stringValue)!
+        
+        lineDots.forEach { (dot) in
+            dot.layer?.backgroundColor = NSColor.clear.cgColor
+            dot.removeFromSuperview()
+        }
+        lineDots.removeAll()
+        
         train()
     }
     
     @IBAction func clear(_ sender: Any) {
-    
+        dots.append(contentsOf: lineDots)
+        lineDots.removeAll()
         dots.forEach { (dot) in
             dot.layer?.backgroundColor = NSColor.clear.cgColor
             dot.removeFromSuperview()
@@ -69,7 +86,7 @@ class ViewController: NSViewController {
             dot.layer?.backgroundColor = NSColor.green.cgColor
             
             view.addSubview(dot)
-            dots.append(dot)
+            lineDots.append(dot)
         }
         
     }
@@ -81,7 +98,7 @@ class ViewController: NSViewController {
         
         for _ in 1...epochCount {
             
-            let optimizer = SGD(for: model, learningRate: 0.1)
+            let optimizer = SGD(for: model, learningRate: learningRate)
             
             let (_, grads) = valueWithGradient(at: model) { model -> Tensor<Float> in
                 return meanSquaredError(predicted: model.callAsFunction(inputs), expected: outputs)
